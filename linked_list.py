@@ -18,7 +18,7 @@ class LinkedList:
 
         return first_node
 
-    def insert_after(self, prev_node, val=None):
+    def insert_after(self, prev_node, val):
         if prev_node is None:
             print("Cannot insert after a node of None type")
             return
