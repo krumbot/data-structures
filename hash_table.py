@@ -12,7 +12,7 @@ class HashTable:
 
     def _hash_func(self, key):
         if key is None:
-            raise ValueError('Invalid key specified')
+            raise ValueError("Invalid key specified")
         if type(key) is str:
             return sum([ord(letter) for letter in key]) % self._capacity
         else:
@@ -48,9 +48,7 @@ class HashTable:
         # and re-create/append a new one to the end of the list
         existing_node = self._find_node_by_key(store, key)
         if existing_node is not None:
-            print('removing')
             store.remove(existing_node)
-            print('removed')
             self._size -= 1
 
         store.insert_last((key, val))

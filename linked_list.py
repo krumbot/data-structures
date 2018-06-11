@@ -20,8 +20,7 @@ class LinkedList:
 
     def insert_after(self, prev_node, val):
         if prev_node is None:
-            print("Cannot insert after a node of None type")
-            return
+            raise ValueError("Cannot insert after a node of None type")
 
         new_node = Node(val, prev_node.next)
         prev_node.next = new_node
@@ -69,8 +68,7 @@ class LinkedList:
 
     def remove(self, node):
         if node is None:
-            print("Please specify a node to remove from the Linked List.")
-            return
+            raise ValueError("Please specify a node to remove from the Linked List.")
 
         def remove_node(prev):
             if self.head == node:
