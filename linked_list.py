@@ -32,10 +32,13 @@ class LinkedList:
         last_node = Node(val)
 
         loop_node = self.head
-        while loop_node.next is not None:
-            loop_node = loop_node.next
+        if loop_node is None:
+            self.head = last_node
+        else:
+            while loop_node.next is not None:
+                loop_node = loop_node.next
 
-        loop_node.next = last_node
+            loop_node.next = last_node
         return last_node
 
     # Returns the nth node in the linked list with the given val
